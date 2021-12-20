@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <script>
         //While 기본 
 
@@ -33,17 +35,18 @@
         // }
         // document.write("</table>");
 
-        
+
     </script>
 
-    
-<style>
-    iframe {
-        width:300px;height:500px; border:1px solid gray;
-        margin:0px 20px;    
-    }
 
-</style>
+    <style>
+        iframe {
+            width: 300px;
+            height: 500px;
+            border: 1px solid gray;
+            margin: 0px 20px;
+        }
+    </style>
 
 
 
@@ -59,8 +62,8 @@
 
 
 </body>
-</html>
 
+</html>
 <!-- 01 
 수를 입력받아
 1부터 입력받은 수까지 합출력 (document.write())
@@ -75,8 +78,80 @@
 
 03 모든 구구단 출력(2단부터 ~ 9단까지)
 
-03 별찍기
+04 별찍기
 *
 **
 ***
 **** -->
+<script>
+    //01
+    document.write('<br><br>');
+    var num, sum = 0, count = 0;
+    num = parseInt(prompt("숫자 입력"));
+    document.write("입력받은 숫자 : " + num + "<br>");
+    do {
+        sum = sum + count;
+        count = count + 1;
+    } while (count <= num)
+    document.write(num + "부터 1까지의 합 : " + sum);
+
+    //02
+    document.write('<br><br>');
+    var gugu = prompt("원하는 구구단을 입력해주세요");
+    if (!isNaN(gugu)) {
+        for (var i = 9; i >= 1; i--) {
+            document.write(gugu + "x" + i + "=" + (i * gugu) + "입니다.</br>");
+        }
+    } else {
+        alert("숫자가 아닙니다.")
+    }
+
+    //03
+    document.write('<br><br>');
+    for (let i = 2; i <= 9; i++) {
+        document.write(i + '단');
+        document.write('<br>');
+        for (let j = 1; j <= 9; j++) {
+            document.write(i + ' * ' + j + ' = ' + (i * j));
+            document.write('<br>');
+        }
+    }
+
+    //거꾸로 구구단
+    document.write('<br><br>');
+    for (let i = 9; i >= 2; i--) {
+        document.write(i + '단');
+        document.write('<br>');
+        for (let j = 9; j >= 1; j--) {
+            document.write(i + ' * ' + j + ' = ' + (i * j));
+            document.write('<br>');
+        }
+    }
+
+    //04
+    document.write('<br><br>');
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j <= i; j++) {
+            document.write('*');
+        }
+        document.write('<br>');
+    }
+
+    /////별반대로
+    document.write('<br><br>');
+    for (let i = 5; i >= 0; i--) {
+        for (let j = 0; j <= i; j++) {
+            document.write('*');
+        }
+        document.write('<br>');
+    }
+
+    /////별5*5
+    document.write('<br><br>');
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            document.write('*');
+        }
+        document.write('<br>');
+    }
+</script>
