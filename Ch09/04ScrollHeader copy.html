@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{}
+        body{margin:0px;
+            height:5000px;
+        }
+        #wrapper{}
+        #header-meta{
+            height:20px;background-color:wheat;margin-bottom:5px;
+           display: flex;
+           flex-direction: row;
+           justify-content: flex-end;
+        }
+        #header-meta span{
+         padding-right: 20px;
+        }
+        nav{
+            height:60px;background-color:wheat;margin-bottom:5px;
+            padding:5px;
+            display: flex;
+            justify-content: center
+        }
+        nav ul li{
+          display: inline-block;
+          padding-right: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<!--스타일맨사이트-->
+<div id="wrapper">
+    <div id="header-meta">
+        <span>로그인</span>
+        <span>회원가입</span>
+        <span>장바구니</span>
+    </div>
+    <nav id="header-nav">
+        <ul>
+        <li><a href="#">상의</a></li>
+        <li><a href="#">하의</a></li>
+        <li><a href="#">신발</a></li>
+        <li><a href="#">가방</a></li>
+        <li><a href="#">안경</a></li>
+        <li><a href="#">액세사리</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script>
+    document.addEventListener('scroll',function(){
+        var pos=document.documentElement.scrollTop;
+        var navtg=document.getElementById("header-nav");
+        if(pos>=100){
+            //nav 상단 fixed
+            navtg.style.position='fixed';
+            navtg.style.top='0px';
+            navtg.style.width="100%";
+            navtg.style.justifyContent="left";
+        }else{
+            //nav 다시 원래 위치(static)
+            navtg.style.position='static';
+            navtg.style.justifyContent="center";
+        }
+
+    })
+
+</script>
+    
+</body>
+</html>
