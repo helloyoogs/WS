@@ -5,20 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 제이쿼리 라이브러리 외부CDN추가 -->
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
     <style>
         #wrapper1{width:100%;height:1000px;}
         #modal{display:none;}
     </style>
     <script>
+         var newdiv;
+         var zindex=9999;
+       
         function openmodal(){
-            alert("TEST");
             //코드완성할것
             //1 백그라운드를 생성
             //2 백그라운드를 wrapper1에 연결
             //3 modal을 wrapper1에 연결
+            newdiv=$('<div></div>')     
+            newdiv.css('position','absolute')
+            .css('left','0px')
+            .css('top','0px')
+            .css('background-color','black')
+            .css('width','100%')
+            .css('height','1000px')
+            .css('opacity','0.3')
+            .css('z-index',zindex);
+
+            $('#wrapper1').append(newdiv);
+
+            $('#modal').css('position','absolute')
+            .css('left','38%')
+            .css('top','25%')
+            .css('display','block')
+            .css('width','500px') 
+            .css('height','300px')
+            .css('background-color','white')
+            .css('padding','20px')
+            .css('z-index',zindex+1);
+
         }
         function closemodal(){
             //코드완성할것
+            $('#modal').css('display','none');
+            newdiv.css('display','none');
         }
     </script>
 </head>
